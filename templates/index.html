@@ -1,0 +1,128 @@
+{% load static %}
+{% include 'header.html' %}
+<div class="clear"></div>
+    
+    <div id="page-content">
+        <section class="flexslider">
+            <ul class="slides">
+                <li>
+                    <img src="{% static 'images/hero-bg.jpg' %}"/>
+                    <div class="slide-info">
+                        <div class="slide-con">
+                            <b>Manage Account</b>
+                            <h3> Insurance</h3>
+                            <p>Healthcare May seem to be very expensive ,yet if you learn from ants you will realise that it so very affordable</p>
+                            <a href="{% url 'register' %}" class="ti-arrow-right"></a>
+                        </div>
+                    </div>
+                </li>
+         
+            </ul>
+        </section>
+        <div class="container">
+            <div class="row">
+                <section class="col-sm-7 col-md-8 col-lg-8">
+                    <div class="intro">
+                        <h2>Welcome to Sikhwama  Savings Account</h2>
+                        <p>services that are offered by the savings Account.</p>
+                        <ul class="row">
+                            <li class="col-sm-4">
+                                <i class="fa fa-life-ring"></i>
+                                <h3>Health insurance</h3>
+                                <p>Secure your well-being with our comprehensive health insurance coverage. We prioritize your health and provide financial support for medical expenses, ensuring you and your loved ones receive the care you deserve.</p>
+                            </li>
+                            <li class="col-sm-4">
+                                <i class="ti-marker-alt"></i>
+                                <h3>House Insurance</h3>
+                                <p>Protect your home sweet home with our reliable house insurance. Whether it's natural disasters, accidents, or unexpected events, our coverage safeguards your home, belongings, and peace of mind.</p>
+                            </li>
+                            <li li href="{% url 'register' %}" class="col-sm-4">
+                               
+                                <i class="ti-email"></i>
+                                <a>Business insurance</a>
+                                <p>Empower your entrepreneurial journey with our business insurance solutions. We understand the risks associated with running a business, and our tailored coverage ensures that you can focus on growth while we handle the uncertainties.</p>
+                            </li>
+                        </ul>
+                    </div>
+                </section>
+                
+            </div>
+        </div>
+        <section class="product-tab">
+            <div class="container">
+                <div class="row">
+                    <div id="parentVerticalTab">
+                        
+                        <div class="col-sm-5 col-md-5 col-lg-5 resp-tabs-container hor_1">
+                            <div>
+                                <div class="prod-tab-content">
+                                    <h4>
+                                        <span class="prod-cion"><i class="ti-heart-broken"></i></span>
+                                        
+                                    </h4>
+                                    <p>take a step and make your life better and avoid supprises,Use our self service culculator to predict possible premiums</p>
+                                    <p>Possible premium culculator. </p>
+                                    
+                                    <p>
+                                        <!-- here we should put the link to the page where the culculations should happen so that when a aperson wants bto check possible premiums after some time -->
+                                        <a class="btn-default" href="#">Get Free Quote</a>
+                                    </p>
+                                </div>
+                            </div>
+                          
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="services">
+            <h2 class="text-center">Why Choose Us</h2>
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm-3 services-dtl">
+                        <span class="fa fa-life-bouy"></span>
+                        <h3>24x7 Support</h3>
+                        <p>Experience round-the-clock support from our dedicated team. We're here to assist you at any time, ensuring your peace of mind and satisfaction.</p>
+                    </div>
+                    <div class="col-sm-3 services-dtl">
+                        <span class="ti-pencil"></span>
+                        <h3>Easy Claim System</h3>
+                        <p>Simplify the claims process with our user-friendly system. Filing and managing claims has never been easier, providing you with a hassle-free experience.</p>
+                    </div>
+                    <div class="col-sm-3 services-dtl">
+                        <span class="ti-email"></span>
+                        <h3>Easy To Get Started</h3>
+                        <p>Initiate your savings journey effortlessly, directly linked to your mobile money account. Getting started is quick, convenient, and tailored to your financial needs.</p>
+                    </div>
+                    <div class="col-sm-3 services-dtl">
+                        <span class="fa fa-money"></span>
+                        <h3>Flexible Installments</h3>
+                        <p>Enjoy the flexibility of choosing installment plans that suit your budget. Our customizable options ensure a payment schedule that aligns with your financial goals.</p>
+                    </div>
+                    <div class="col-sm-3 services-dtl">
+                        <span class="ti-wallet"></span>
+                        <h3>Competitive Rates</h3>
+                        <p>Benefit from competitive rates and attractive returns. Your savings with us will grow steadily, contributing to your financial well-being.</p>
+                    </div>
+                    <div class="col-sm-3 services-dtl">
+                        <span class="fa fa-laptop"></span>
+                        <h3>Online Account</h3>
+                        <p>Access your savings account anytime, anywhere with our secure online platform. Stay in control of your finances with the convenience of online account management.</p>
+                    </div>
+                    <div class="col-sm-3 services-dtl">
+                        <span class="ti-lock"></span>
+                        <h3>Strongly Secure</h3>
+                        <p>Rest assured with our robust security measures. Your information is safeguarded, ensuring the confidentiality and integrity of your savings account details.</p>
+                    </div>
+                    <div class="col-sm-3 services-dtl">
+                        <span class="ti-book"></span>
+                        <h3>Dynamic Premiums</h3>
+                        <p>Experience dynamic premium options tailored to your evolving needs. Our flexible premium structure adapts to changes in your life, providing continuous financial support.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+<div class="clear"></div>
+{% include 'footer.html' %}
+

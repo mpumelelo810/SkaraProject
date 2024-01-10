@@ -1,0 +1,196 @@
+<!-- The DOCTYPE declaration is used to specify the version of HTML that the webpage is using -->
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <title>Sikhwama Health Savings Account</title>
+    <link rel="shortcut icon" href="{% static 'images/favicon.png' %}" />
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet" type="text/css">
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700,800' rel='stylesheet' type='text/css'>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.css" rel="stylesheet" type="text/css">
+    <link href="{% static 'css/icons.css' %}%" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/easy-responsive-tabs.css' %}%" />
+    <link rel="stylesheet" type="text/css" href="{% static 'css/flexslider.css' %}%" />
+    <link rel="stylesheet" type="text/css" href="{% static 'css/owl.carousel.css' %}%">
+    <!--[if lt IE 8]><!-->
+    <link rel="stylesheet" href="{% static 'ie7/ie7.css' %}">
+    <!--<![endif]-->
+    <link href="{% static 'css/style.css' %}" rel="stylesheet" type="text/css">
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+</head>
+
+<body data-spy="scroll" data-target=".navbar-fixed-top">
+    <header>
+        <!-- The top-bar section contains additional information, such as contact details or links to social media profiles -->
+        <div class="top-bar">
+        </div>
+        <!-- The navigation bar is used for navigating between different pages on the website -->
+        <nav class="navbar navbar-custom navbar-fixed-top" role="navigation">
+            <div class="container">
+                <div class="navbar-header">
+                    <!-- The navbar-toggle button is used to collapse the navigation menu on smaller screens -->
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-main-collapse">
+                        <i class="fa fa-bars"></i>
+                    </button>
+                    <!-- The navbar-brand element contains the logo and name of the website -->
+                    <a class="navbar-brand" href="index.html">
+                        Sikhwama<span>Health Savings Account</span>
+                    </a>
+
+                </div>
+                <div class="collapse navbar-collapse navbar-main-collapse">
+                    <!-- The navbar-nav element contains the links to different pages on the website -->
+                    <ul class="nav navbar-nav navbar-right">
+                        <li>
+                            <a href="{% url 'index' %}">Home</a>
+                        </li>
+                        <li>
+                            <a href="{% url 'about' %}">About-us</a>
+                        </li>
+                        <li>
+                            <a href="{% url 'register' %}">Register</a>
+                        </li>
+                        <li><a href="{% url 'contact' %}">Contact-us</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <div class="clear"></div>
+    <div id="page-content">
+        <section class="breadcrumb">
+            <div class="container">
+                <!-- The breadcrumb section is used to show the user's current location on the website -->
+                <ul>
+                    <li><a href="% url 'index' %">Home</a> ></li>
+                </ul>
+            </div>
+        </section>
+        <section class="blog-page">
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm-8">
+                        <div class="single-post">
+                            <!-- The content of the blog post is displayed here -->
+                        </div>
+                        <div class="social-post">
+                            <!-- The social-post section contains links to share the blog post on social media -->
+                            <div class="social-text">
+                                <ul class="ml-auto social-icon">
+                                    <li>
+                                        <a href="#"><i class="fa fa-facebook"></i></a>
+                                    </li>
+                                    <li>
+                                        <a href="#"><i class="fa fa-twitter"></i></a>
+                                    </li>
+                                    <li>
+                                        <a href="#"><i class="fa fa-google-plus"></i></a>
+                                    </li>
+                                    <li>
+                                        <a href="#"><i class="fa fa-youtube"></i></a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <!-- The comment section allows users to leave comments on the blog post -->
+                        <h2>Leave A Comment</h2>
+                        <form class="comment">
+                            <div class="row">
+                                <div class="col-sm-8">
+                                    <div>
+                                        <input type="text" name="name" placeholder="Name" />
+                                    </div>
+                                    <div>
+                                        <input type="text" name="email" placeholder="Email" />
+                                    </div>
+                                    <div>
+                                        <input type="text" name="subject" placeholder="Subject" />
+                                    </div>
+                                </div>
+                                <div class="col-sm-10">
+                                    <div>
+                                        <textarea rows="1" cols="1" placeholder="Message"></textarea>
+                                    </div>
+                                    <div>
+                                        <input type="submit" class="btn-default" value="Submit" />
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="col-sm-4">
+                        <div class="blog-post">
+                            <!-- The search section allows users to search for content on the website -->
+                            <h2>Search</h2>
+                            <div class="input-group search-text">
+                                <input type="text" class="form-control search" placeholder="Search">
+                                <span class="input-group-btn">
+                                    <button class="btn btn-default btn-search" type="button"><i class="fa fa-search"></i></button>
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+    <div class="clear"></div>
+    <!-- The footer section contains additional information, such as contact details or links to social media profiles -->
+    <footer>
+        <div class="clear"></div>
+        <div class="container">
+            <div class="row contact-sec">
+                <div class="col-md-5 col-lg-5">
+                    <h2>Sikhwama<span> Health Savings Account </span></h2>
+                    <div class="row">
+                        <div class="col-sm-6">
+                            <p>
+                                University of Eswatini
+                            </p>
+                        </div>
+                        <div class="col-sm-6">
+                            <ul>
+                                <li><a href="#"><i class="fa fa-phone"></i> +26876657261</a></li>
+                                <li><a href="#"><i class="ti-email"></i> sikhwama@gmail.com</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <a href="#" class="btn-default">Contact Us</a>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-8 col-lg-8">
+                    <!-- The footer-nav section contains links to different pages on the website -->
+                    <ul class="footer-nav">
+                        <li>
+                            <a href="{% url 'index' %}">Home</a>
+                        </li>
+                        <li>
+                            <a href="{% url 'about' %}">About-us</a>
+                        </li>
+                        <li>
+                            <a href="{% url 'registration.html' %}">Register</a>
+                        </li>
+                        <li><a href="{% url 'contact' %}">Contact-us</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-2 col-lg-2 col-md-offset-2 col-lg-offset-2">
+                    <!-- The footer-social section contains links to social media profiles -->
+                    <ul class="footer-social">
+                        <li><a href="#"><i class="fa fa-facebook"></i></a></li>
+                        <li><a href="#"><i class="fa fa-google-plus"></i></a></li>
+                        <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+                        <li><a href="#"><i class="fa fa-linkedin"></i></a></li>
+                        <li><a href="#"><i class="fa fa-pinterest"></i></a></li>
+                    </ul>
+                </div>
+            </div>

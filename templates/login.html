@@ -1,0 +1,43 @@
+{% load static %}
+{% include 'header.html' %}
+    <div class="clear"></div>
+    <div id="page-content">
+        <section class="breadcrumb">
+            <div class="container">
+                
+                <ul>
+                    <li><a href="{% url 'index' %}">Home</a> ></li>
+                    <li><a href="{% url 'register' %}">Login</a> ></li>
+                   
+                </ul>
+            </div>
+        </section>
+        <section class="blog-page">
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm-8">
+                        <!-- register -->
+                        <h2>Login</h2>
+                            <form method="post" action="{% url 'login' %}">
+                                {% csrf_token %}
+                                {{ msg }}
+                                <div class="mb-3">
+                                    <input type="text" name="username" class="form-control" placeholder="Phone Number">
+                                </div>    
+                                
+                                <div class="mb-3">
+                                    <input type="password" name="password" class="form-control">
+                                </div>
+    
+                                <button type="submit" class="btn btn-primary">Login</button>
+                        </form>
+
+                    </div>
+                    
+                </div>
+            </div>
+        </section>
+    </div>
+    
+    {% include 'footer.html' %}
+</html>

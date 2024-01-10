@@ -1,0 +1,31 @@
+{% load static %}
+{% block content %}
+{% include 'header.html' %}
+    <div class="clear"></div>
+    <div id="page-content">
+        <section class="breadcrumb">
+            <div class="container">
+                
+                <ul>
+                    <li><a href="{% url 'index' %}">Home</a> ></li>
+                    <li><a href="{% url 'register' %}">User Account</a> ></li>
+                   
+                </ul>
+            </div>
+        </section>
+        <div class="col-md-4">
+            <div class="col-md-4">
+                <div class="dashboard-menu">
+                    <h3>Dashboard Menu</h3>
+                    <ul>
+                        <li><a href="{% url 'profile' %}">Profile</a></li>
+                        <li><a href="#">Transactions</a></li>
+                        <li><a href="#">Settings</a></li>
+                    </ul>
+                </div>
+            </div>
+    </div>
+    
+
+    {% include 'footer.html' %}
+{% endblock %}

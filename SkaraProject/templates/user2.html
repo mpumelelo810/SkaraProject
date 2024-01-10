@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>User Dashboard</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+</head>
+
+<body>
+
+    <!-- Navigation Bar -->
+    <nav class="navbar navbar-default" role="navigation">
+        <div class="container-fluid">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="#">User Dashboard</a>
+            </div>
+
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav">
+                    <li class="active"><a href="#">Home</a></li>
+                    <li><a href="#">Balance</a></li>
+                    <li><a href="#">Deposits</a></li>
+                    <li><a href="#">Deductions</a></li>
+                    <li><a href="#">Checkups</a></li>
+                    <li><a href="#">Health Information</a></li>
+                    <li><a href="#">Registration Information</a></li>
+                </ul>
+                <ul class="nav navbar-nav navbar-right">
+                    <li><a href="#">Logout</a></li>
+                </ul>
+            </div>
+            <!-- /.navbar-collapse -->
+        </div>
+        <!-- /.container-fluid -->
+    </nav>
+
+    <!-- User Dashboard Content -->
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <h2>Welcome, [Username]!</h2>
+                <!-- Display User Balance -->
+                <div>
+                    <h3>Your Balance: $1000.00</h3>
+                </div>
+
+                <!-- Display Graph for Deposits -->
+                <div>
+                    <h3>Deposit Summary</h3>
+                    <!-- You can use a chart library like Chart.js for graphs -->
+                    <canvas id="depositChart" width="400" height="200"></canvas>
+                </div>
+
+                <!-- Display Deductions Summary -->
+                <div>
+                    <h3>Deductions Summary</h3>
+                    <!-- You can use a chart library like Chart.js for graphs -->
+                    <canvas id="deductionChart" width="400" height="200"></canvas>
+                </div>
+
+                <!-- Calendar for Checkups -->
+                <div>
+                    <h3>Checkups Calendar</h3>
+                    <!-- You can use a calendar library like FullCalendar for this -->
+                    <div id="checkupsCalendar"></div>
+                </div>
+
+                <!-- Health Information -->
+                <div>
+                    <h3>Health Information</h3>
+                    <p>Provide relevant health information here...</p>
+                </div>
+
+                <!-- Registration Information -->
+                <div>
+                    <h3>Registration Information</h3>
+                    <!-- Display user registration details -->
+                    <p>Name: [User Name]</p>
+                    <p>Email: [User Email]</p>
+                    <!-- Add more registration details as needed -->
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+
+    <!-- Include Chart.js and FullCalendar scripts here -->
+    <!-- Replace [Username], [User Name], [User Email] with actual user data -->
+</body>
+
+</html>

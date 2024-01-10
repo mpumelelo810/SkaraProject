@@ -1,0 +1,78 @@
+<!-- The DOCTYPE declaration is used to specify the version of HTML that the webpage is using -->
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <title>Sikhwama  Savings Account</title>
+    <link rel="shortcut icon" href="{% static 'images/favicon.png' %}" />
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet" type="text/css">
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700,800' rel='stylesheet' type='text/css'>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.css" rel="stylesheet" type="text/css">
+    <link href="{% static 'css/icons.css' %}%" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/easy-responsive-tabs.css' %}%" />
+    <link rel="stylesheet" type="text/css" href="{% static 'css/flexslider.css' %}%" />
+    <link rel="stylesheet" type="text/css" href="{% static 'css/owl.carousel.css' %}%">
+    <!--[if lt IE 8]><!-->
+    <link rel="stylesheet" href="{% static 'ie7/ie7.css' %}">
+    <!--<![endif]-->
+    <link href="{% static 'css/style.css' %}" rel="stylesheet" type="text/css">
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+</head>
+
+<body data-spy="scroll" data-target=".navbar-fixed-top">
+    <header>
+        <!-- The top-bar section contains additional information, such as contact details or links to social media profiles -->
+        <div class="top-bar">
+        </div>
+        <!-- The navigation bar is used for navigating between different pages on the website -->
+        <nav class="navbar navbar-custom  navbar-fixed-top" role="navigation">
+            <div class="container">
+                <div class="navbar-header">
+                    <!-- The navbar-toggle button is used to collapse the navigation menu on smaller screens -->
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-main-collapse">
+                        <i class="fa fa-bars"></i>
+                    </button>
+                    <!-- The navbar-brand element contains the logo and name of the website -->
+                    <a class="navbar-brand" href="{% url 'index' %}">
+                        Sikhwama<span> Savings Account</span>
+                    </a>
+
+                </div>
+                <div class="collapse navbar-collapse navbar-main-collapse">
+                    <!-- The navbar-nav element contains the links to different pages on the website -->
+                    <ul class="nav navbar-nav navbar-right">
+                        <li>
+                            <a href="{% url 'index' %}">Home</a>
+                        </li>
+                        <li>
+                            <a href="{% url 'about' %}">About-us</a>
+                        </li>
+                        {% if logged %}
+                        <li>
+                            <a href="{% url 'user' %}">Account</a>
+                        </li>
+                        {% else %}
+                        <li>
+                            <a href="{% url 'register' %}">Register</a>
+                        </li>
+                        <li>
+                            <a href="{% url 'login' %}">Login</a>
+                        </li>
+                        {% endif %}
+                        <li>
+                            <a href="{% url 'contact' %}">Contact-us</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>

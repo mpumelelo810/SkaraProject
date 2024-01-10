@@ -1,0 +1,40 @@
+{% load static %}
+{% include 'header.html' %}
+    <div class="clear"></div>
+    <div id="page-content">
+        <section class="breadcrumb">
+            <div class="container">
+                
+                <ul>
+                    <li><a href="{% url 'index' %}">Home</a> ></li>
+                    <li><a href="{% url 'register' %}">Verify</a> ></li>
+                   
+                </ul>
+            </div>
+        </section>
+        <section class="blog-page">
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm-8">
+                        <!-- register -->
+                        <h2>Account Verification</h2>
+                            <form method="post" action="{% url 'verify' %}">
+                                {% csrf_token %}
+                                {{ msg }}
+                                <div class="mb-3">
+                                    <input type="text" name="code" class="form-control" placeholder="Enter code">
+                                </div>
+    
+                                <button type="submit" class="btn btn-primary">Verify</button>
+                        </form>
+
+                    </div>
+                    
+                </div>
+            </div>
+        </section>
+    </div>
+    
+
+    {% include 'footer.html' %}
+</html>

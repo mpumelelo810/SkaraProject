@@ -1,0 +1,35 @@
+{% include 'header.html' %}
+
+{% block content %}
+    <div id="page-content">
+        <section class="breadcrumb">
+            <div class="container">
+                <ul>
+                    <li><a href="{% url 'index' %}">Home</a> ></li>
+                    <li><a href="{% url 'register' %}">User Account</a> ></li>
+                </ul>
+            </div>
+        </section>
+
+        <form method="POST" action="{% url 'profile' %}">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <hr>
+
+            <h2>User Information</h2>
+            <p>First Name: {{ user_account.firstname }}</p>
+            <p>Last Name: {{ user_account.lastname }}</p>
+            <p>Gender: {{ user_account.gender }}</p>
+            <p>Address: {{ user_account.address }}</p>
+           
+    
+        </div>
+    
+            <button type="submit" class="btn btn-primary">Update Account</button>
+        </form>
+
+        <a href="{% url 'logout' %}">Logout</a>
+
+     
+    {% include 'footer.html' %}
+{% endblock %}
