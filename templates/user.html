@@ -1,31 +1,23 @@
-{% load static %}
-{% block content %}
 {% include 'header.html' %}
-    <div class="clear"></div>
-    <div id="page-content">
-        <section class="breadcrumb">
-            <div class="container">
-                
-                <ul>
-                    <li><a href="{% url 'index' %}">Home</a> ></li>
-                    <li><a href="{% url 'register' %}">User Account</a> ></li>
-                   
-                </ul>
-            </div>
-        </section>
-        <div class="col-md-4">
-            <div class="col-md-4">
-                <div class="dashboard-menu">
-                    <h3>Dashboard Menu</h3>
-                    <ul>
-                        <li><a href="{% url 'profile' %}">Profile</a></li>
-                        <li><a href="#">Transactions</a></li>
-                        <li><a href="#">Settings</a></li>
-                    </ul>
-                </div>
-            </div>
-    </div>
-    
-
-    {% include 'footer.html' %}
-{% endblock %}
+<main class="container" style="padding-top:110px;padding-bottom:70px;max-width:800px">
+  <h1>Account</h1>
+  <p>This is a development account. No contributions or payments are processed here.</p>
+  {% for message in messages %}<div class="alert alert-success">{{ message }}</div>{% endfor %}
+  <div class="panel panel-default"><div class="panel-body">
+    <h2>Profile</h2>
+    <p><strong>Name:</strong> {{ user_account.firstname }} {{ user_account.lastname }}</p>
+    <p><strong>Phone:</strong> {{ user_account.phone }}</p>
+    <p><strong>Email:</strong> {{ user_account.email }}</p>
+    <p><strong>Demo balance:</strong> {{ financial_info.savings_account_balance|default:"0.00" }} (no real funds)</p>
+  </div></div>
+  <h2>Update profile</h2>
+  <form method="post" action="{% url 'user' %}">
+    {% csrf_token %}
+    {% for field in form %}
+      <div class="form-group"><label for="{{ field.id_for_label }}">{{ field.label }}</label>{{ field }}{% for error in field.errors %}<p class="text-danger">{{ error }}</p>{% endfor %}</div>
+    {% endfor %}
+    <button class="btn btn-primary" type="submit">Save changes</button>
+  </form>
+  <form method="post" action="{% url 'logout' %}" style="margin-top:25px">{% csrf_token %}<button class="btn btn-default" type="submit">Log out</button></form>
+</main>
+{% include 'footer.html' %}

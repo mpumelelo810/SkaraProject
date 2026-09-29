@@ -11,13 +11,6 @@ class Migration(migrations.Migration):
     ]
 
     operations = [
-        migrations.CreateModel(
-            name='FinancialInfo',
-            fields=[
-                ('user', models.OneToOneField(on_delete=django.db.models.deletion.CASCADE, primary_key=True, serialize=False, to='user_info.userinfo')),
-                ('savings_account_balance', models.DecimalField(decimal_places=2, max_digits=10)),
-            ],
-        ),
         migrations.RemoveField(
             model_name='userinfo',
             name='id',
@@ -31,5 +24,12 @@ class Migration(migrations.Migration):
             model_name='userinfo',
             name='phone',
             field=models.CharField(max_length=15, primary_key=True, serialize=False, unique=True),
+        ),
+        migrations.CreateModel(
+            name='FinancialInfo',
+            fields=[
+                ('user', models.OneToOneField(on_delete=django.db.models.deletion.CASCADE, primary_key=True, serialize=False, to='user_info.userinfo')),
+                ('savings_account_balance', models.DecimalField(decimal_places=2, max_digits=10)),
+            ],
         ),
     ]

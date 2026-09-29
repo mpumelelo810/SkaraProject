@@ -17,7 +17,7 @@ The academic project was developed by Mpumelelo Mancoba Dlamini and Mfanwekhaya 
 | Payments and insurance | Product ideas only; no live integrations or policies |
 | Supabase | Planned as a separate Sikhwama project; not connected yet |
 
-The React demo uses in-memory data. Refreshing the page resets it. It is a safe way to explore the proposed interface without entering real financial information.
+The React demo uses in-memory data. Refreshing the page resets it. Django serves the built React landing page at `/`; account pages remain separate until the API is designed.
 
 ## Run the React frontend
 
@@ -27,19 +27,21 @@ npm ci
 npm run dev
 ```
 
-Open the local URL printed by Vite. To check a production bundle, run `npm run build` and `npm run preview`.
+Open the URL printed by Vite under `/static/react/`. To rebuild the Django-served interface, run `npm run build`. Then from the repository root run `python manage.py migrate` and `python manage.py runserver`.
+
+For a fresh Django environment, create a Python virtual environment and install `requirements.txt` first. Copy the settings in `.env.example` into your environment as needed. The bundled development secret is only for local use; set a private `DJANGO_SECRET_KEY` and `DJANGO_DEBUG=false` for a real deployment.
 
 ## Legacy Django status
 
-The existing Django code is not ready for a fresh installation. A local review on 29 September 2026 found an undeclared `mailtrap` dependency, a foreign-key mismatch at migration `user_info.0005`, a registration error after that failed migration, and a missing login redirect target. The repository also contains hard-coded credentials, a committed SQLite database and plain-text password handling. Rotate exposed credentials and repair these issues before processing real user data. A separate Supabase project is planned for PostgreSQL and authentication.
+The fresh-install migration and account-route blockers have been repaired in this branch. Django authentication hashes new passwords. Existing legacy passwords are disabled by a migration, so existing users need a secure account recovery path before they can sign in. Exposed credentials in repository history must still be rotated. The committed historical SQLite database remains a data-handling concern. A separate Supabase project is planned, but not connected.
 
 ## Next milestones
 
-1. Repair the backend project structure and migrations, remove secrets from current code, and document reproducible setup.
-2. Build secure account authentication and protect each user's data.
-3. Connect the React interface to a traceable demo contribution ledger, goals and transaction history.
-4. Prototype a provider payment request and approval flow with simulated funds.
-5. Validate the workflow with potential users and providers before considering real payment integration.
+1. Finish account recovery for users of the legacy database and rotate exposed credentials.
+2. Connect the React interface to authenticated backend endpoints and a traceable demo contribution ledger.
+3. Build goals, history and a provider payment request flow using simulated funds.
+4. Add a separate Supabase project with carefully scoped database access.
+5. Validate the workflow with potential users and providers before real payment integration.
 
 ## Portfolio summary
 

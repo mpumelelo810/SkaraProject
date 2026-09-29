@@ -1,7 +1,5 @@
 from django.db import models
 from django.contrib import admin
-from django.core.exceptions import ValidationError
-from django.contrib.auth.password_validation import validate_password
 
 
 
@@ -9,23 +7,13 @@ from django.contrib.auth.password_validation import validate_password
 class UserInfo(models.Model):
     firstname = models.CharField(max_length=100)
     lastname = models.CharField(max_length=100)
-    phone = models.CharField(max_length=15, unique=True, primary_key=True, error_messages={"unique": "This email address is already registered."})
-    email = models.EmailField(unique=True,error_messages={"unique": "This phone number is already registered."})
+    phone = models.CharField(max_length=15, unique=True, primary_key=True)
+    email = models.EmailField(unique=True)
     dob = models.DateField()
     gender = models.CharField(max_length=10)
     address = models.CharField(max_length=200)
-    password = models.CharField(max_length=50)
-    def clean(self):
-        # Validate the password using Django's built-in validators
-        try:
-            validate_password(self.password, self)
-        except ValidationError as e:
-            raise ValidationError({'password': e.messages})
-
-    def save(self, *args, **kwargs):
-        # Run clean() before saving to validate the password
-        self.full_clean()
-        super().save(*args, **kwargs)
+    # Legacy column kept for migration compatibility. Authentication uses auth.User.
+    password = models.CharField(max_length=50, default='disabled', editable=False)
     
 
 class FinancialInfo(models.Model):
