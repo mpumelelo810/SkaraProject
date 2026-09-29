@@ -14,10 +14,10 @@
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet" type="text/css">
     <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700,800' rel='stylesheet' type='text/css'>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.css" rel="stylesheet" type="text/css">
-    <link href="{% static 'css/icons.css' %}%" rel="stylesheet" type="text/css">
-    <link rel="stylesheet" type="text/css" href="{% static 'css/easy-responsive-tabs.css' %}%" />
-    <link rel="stylesheet" type="text/css" href="{% static 'css/flexslider.css' %}%" />
-    <link rel="stylesheet" type="text/css" href="{% static 'css/owl.carousel.css' %}%">
+    <link href="{% static 'css/icons.css' %}" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/easy-responsive-tabs.css' %}" />
+    <link rel="stylesheet" type="text/css" href="{% static 'css/flexslider.css' %}" />
+    <link rel="stylesheet" type="text/css" href="{% static 'css/owl.carousel.css' %}">
     <!--[if lt IE 8]><!-->
     <link rel="stylesheet" href="{% static 'ie7/ie7.css' %}">
     <!--<![endif]-->
@@ -56,7 +56,7 @@
                         <li>
                             <a href="{% url 'about' %}">About-us</a>
                         </li>
-                        {% if logged %}
+                        {% if user.is_authenticated %}
                         <li>
                             <a href="{% url 'user' %}">Account</a>
                         </li>
