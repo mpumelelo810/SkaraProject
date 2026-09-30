@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import './App.css'
+import Account from './Account'
 
 const money = value => new Intl.NumberFormat('en-SZ', { style: 'currency', currency: 'SZL' }).format(Number(value) || 0)
 const seed = [
@@ -25,6 +26,7 @@ function Header({ page, go }) {
       <button className={page === 'how' ? 'active' : ''} onClick={() => nav('how')}>How it works</button>
       <button className={page === 'about' ? 'active' : ''} onClick={() => nav('about')}>About the project</button>
       <button className="nav-cta" onClick={() => nav('demo')}>Explore demo <span>↗</span></button>
+      <button className={page === 'account' ? 'active' : ''} onClick={() => nav('account')}>My account</button>
     </nav>
   </div></header>
 }
@@ -94,6 +96,6 @@ function Demo() {
 function App() {
   const [page, setPage] = useState('home')
   const go = target => { setPage(target); window.scrollTo({top:0,behavior:'smooth'}) }
-  return <><Header page={page} go={go}/>{page==='home'?<Home go={go}/>:page==='how'?<How/>:page==='about'?<About/>:<Demo/>}<footer className="footer"><div className="wrap footer-main"><div><Brand/><p>A health finance concept built around small steps and clearer choices.</p></div><div><button onClick={()=>go('how')}>How it works</button><button onClick={()=>go('about')}>About the project</button><button onClick={()=>go('demo')}>Explore demo</button></div></div><div className="wrap footer-bottom"><span>© 2026 Sikhwama. Concept prototype.</span><span>Made with purpose in Eswatini.</span></div></footer></>
+  return <><Header page={page} go={go}/>{page==='home'?<Home go={go}/>:page==='how'?<How/>:page==='about'?<About/>:page==='account'?<Account/>:<Demo/>}<footer className="footer"><div className="wrap footer-main"><div><Brand/><p>A health finance concept built around small steps and clearer choices.</p></div><div><button onClick={()=>go('how')}>How it works</button><button onClick={()=>go('about')}>About the project</button><button onClick={()=>go('demo')}>Explore demo</button></div></div><div className="wrap footer-bottom"><span>© 2026 Sikhwama. Concept prototype.</span><span>Made with purpose in Eswatini.</span></div></footer></>
 }
 export default App

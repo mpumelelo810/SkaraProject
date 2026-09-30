@@ -15,9 +15,9 @@ The academic project was developed by Mpumelelo Mancoba Dlamini and Mfanwekhaya 
 | `frontend/` | React and Vite interface with public pages, a contribution calculator and a simulated savings dashboard |
 | Django project | Legacy pages, forms and early user and balance models |
 | Payments and insurance | Product ideas only; no live integrations or policies |
-| Supabase | Planned as a separate Sikhwama project; not connected yet |
+| Supabase | Dedicated free project; React authentication and saved demo goals/contributions protected by ownership policies |
 
-The React demo uses in-memory data. Refreshing the page resets it. Django serves the built React landing page at `/`; account pages remain separate until the API is designed.
+The React demo uses in-memory data. Refreshing the page resets it. Django serves the built React landing page at `/`; My account uses Supabase Auth and PostgreSQL. Legacy Django accounts remain separate.
 
 ## Run the React frontend
 
@@ -33,16 +33,22 @@ For a fresh Django environment, create a Python virtual environment and install 
 
 ## Legacy Django status
 
-The fresh-install migration and account-route blockers have been repaired in this branch. Django authentication hashes new passwords. Existing legacy passwords are disabled by a migration, so existing users need a secure account recovery path before they can sign in. Exposed credentials in repository history must still be rotated. The committed historical SQLite database remains a data-handling concern. A separate Supabase project is planned, but not connected.
+The fresh-install migration and account-route blockers have been repaired in this branch. Django authentication hashes new passwords. Existing legacy passwords are disabled by a migration, so existing users need a secure account recovery path before they can sign in. Exposed credentials in repository history must still be rotated. The committed historical SQLite database remains a data-handling concern. React now uses a separate Supabase project; Django remains on SQLite.
 
 ## Next milestones
 
 1. Finish account recovery for users of the legacy database and rotate exposed credentials.
-2. Connect the React interface to authenticated backend endpoints and a traceable demo contribution ledger.
+2. Test confirmation email delivery and configure redirects for the deployed site.
 3. Build goals, history and a provider payment request flow using simulated funds.
-4. Add a separate Supabase project with carefully scoped database access.
+4. Add account recovery, pagination and broader account-flow tests.
 5. Validate the workflow with potential users and providers before real payment integration.
 
 ## Portfolio summary
 
 Sikhwama Health Insurance is an Eswatini-focused health finance concept originally developed as a CSC499 project. I co-developed an early Django prototype and explored predictive modelling with synthetic data. I am rebuilding the interface in React and the product around secure accounts, transparent health savings and traceable transactions before any real payment integration.
+
+## Supabase connection
+
+Dedicated project: Sikhwama Health Insurance (`zqxnxflsbcfacdskfbfz`). My account uses email/password Auth, saved goals and append-only simulated contributions stored as integer cents. Public Explore demo still resets on refresh. No real money is moved.
+
+Only the publishable key is included in browser code. Optional overrides are in `frontend/.env.example`; copy to `.env.local` before rebuilding. Never put a secret/service-role key in the frontend. Signup email delivery can restrict recipients during testing; configure confirmation redirects for the final hosted URL before launch. See `supabase/README.md`.
