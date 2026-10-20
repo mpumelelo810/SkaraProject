@@ -10,7 +10,7 @@ const seed = [
 ]
 
 function Brand() {
-  return <span className="brand"><span className="brand-mark">✦</span><span>Sikhwama<small>HEALTH INSURANCE</small></span></span>
+  return <span className="brand"><span className="brand-mark">S</span><span>Sikhwama<small>HEALTH SAVINGS CONCEPT</small></span></span>
 }
 function Notice() {
   return <div className="notice"><span className="notice-dot" /> Concept demo: balances and contributions are simulated. No real money or insurance cover.</div>
@@ -33,23 +33,20 @@ function Header({ page, go }) {
 function Home({ go }) {
   return <>
     <section className="hero"><div className="wrap hero-grid"><div className="hero-copy">
-      <span className="eyebrow">A HEALTHIER WAY TO PREPARE</span>
-      <h1>Small steps today.<br /><em>More peace of mind</em><br />tomorrow.</h1>
-      <p>Healthcare costs do not always arrive when you expect them. Sikhwama explores a simple way to build a dedicated health balance, one contribution at a time.</p>
+      <span className="eyebrow">A COMMUNITY HEALTH SAVINGS IDEA</span>
+      <h1>Care is easier to plan<br /><em>one small step</em><br />at a time.</h1>
+      <p>Sikhwama is an Eswatini-born project exploring how people could prepare for future healthcare costs through small, clearly recorded contributions.</p>
       <div className="actions"><button className="button primary" onClick={() => go('demo')}>Explore the demo <span>→</span></button><button className="text-button" onClick={() => go('how')}>See how it works ↗</button></div>
-      <div className="hero-foot"><span>✳</span> Designed around everyday life in Eswatini</div>
-    </div><div className="hero-art" aria-label="Illustration of a growing health balance"><div className="orbit one" /><div className="orbit two" /><div className="sun">✦</div>
-      <div className="sample-card"><div className="sample-top"><span>✦</span> YOUR HEALTH BALANCE <b>•••</b></div><strong>E 480<span>.00</span></strong><small>Building a little at a time</small><div className="card-flower">✳</div></div>
-      <div className="float-card"><span>♡</span><div><strong>+ E 30.00</strong><small>A little more set aside</small></div></div><small className="art-caption">Illustration, not a live account</small>
-    </div></div></section>
-    <section className="section"><div className="wrap"><div className="section-heading"><span className="eyebrow">THE IDEA</span><h2>Care starts before<br />you need it.</h2><p>A dedicated place to prepare for healthcare expenses, with a clear view of every contribution.</p></div>
+      <div className="hero-foot"><span>✳</span> A project shaped by everyday life in Eswatini</div>
+    </div><aside className="hero-art" aria-label="The Sikhwama idea: plan, save and prepare"><div className="community-panel"><div className="panel-kicker"><span className="panel-stamp">S</span><span>THE SIKHWAMA IDEA<br/><b>PREPARE AT YOUR PACE</b></span></div><div className="community-illustration" aria-hidden="true"><span className="sun-disc"></span><span className="hill hill-back"></span><span className="hill hill-front"></span><span className="home-shape"><i></i><b></b></span><span className="path-line"></span></div><div className="panel-note"><span className="note-rule"></span><div><strong>Small steps. Clear records.</strong><p>A concept for setting something aside for future healthcare costs.</p></div></div></div><p className="art-caption">A community-first idea, being developed in Eswatini.</p></aside></div></section>
+    <section className="section"><div className="wrap"><div className="section-heading"><span className="eyebrow">THE IDEA</span><h2>Planning for care can start<br />before you need it.</h2><p>A dedicated place to prepare for healthcare expenses, with a clear view of every contribution.</p></div>
       <div className="features">
         <article><span className="feature-icon">◇</span><small>01</small><h3>Save in small amounts</h3><p>The original concept proposes setting aside at least 6% from eligible transactions. The method still needs a payment partner.</p></article>
         <article><span className="feature-icon">↗</span><small>02</small><h3>See your progress</h3><p>Follow a savings goal, balance and complete transaction history in one clear view.</p></article>
         <article><span className="feature-icon">♡</span><small>03</small><h3>Plan for care</h3><p>The long-term vision is to request payments to approved healthcare providers from available savings.</p></article>
       </div>
     </div></section>
-    <section className="story-band"><div className="wrap story-grid"><div><span className="eyebrow">BUILT FOR REAL LIFE</span><h2>What if preparing for healthcare felt possible every day?</h2></div><div><p>Sikhwama began as a University of Eswatini project. We are rebuilding the prototype around trustworthy accounts and transparent savings before connecting real payments.</p><button className="button light" onClick={() => go('about')}>Read our story <span>→</span></button></div></div></section>
+    <section className="story-band"><div className="wrap story-grid"><div><span className="eyebrow">BUILT FOR REAL LIFE</span><h2>A practical idea, built one step at a time.</h2></div><div><p>Sikhwama began as a University of Eswatini project. We are rebuilding the prototype around trustworthy accounts and transparent savings before connecting real payments.</p><button className="button light" onClick={() => go('about')}>Read our story <span>→</span></button></div></div></section>
     <section className="closing"><div className="wrap closing-inner"><div><span className="eyebrow">TRY THE CONCEPT</span><h2>See how small contributions add up.</h2><p>Explore a simulated dashboard. No sign-up or payment details needed.</p></div><button className="button primary" onClick={() => go('demo')}>Open demo dashboard <span>→</span></button></div></section>
   </>
 }
