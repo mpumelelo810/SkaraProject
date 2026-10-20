@@ -1,6 +1,5 @@
-from SkaraProject.models import User
+"""Legacy nested test module retained for compatibility.
 
-all_users = User.objects.all()
-
-for user in all_users:
-    print(user.username)
+The old module queried a removed User model during test discovery. The active
+Django test suite lives in user_info/tests.py and SkaraProject/tests.py.
+"""
