@@ -1,6 +1,9 @@
-from SkaraProject.models import User
+from django.test import TestCase
+from django.urls import reverse
 
-all_users = User.objects.all()
 
-for user in all_users:
-    print(user.username)
+class PublicPageTests(TestCase):
+    def test_homepage_serves_react_entrypoint(self):
+        response = self.client.get(reverse('index'))
+        self.assertEqual(response.status_code, 200)
+        self.assertContains(response, 'id="root"')
